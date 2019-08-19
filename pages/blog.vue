@@ -21,7 +21,6 @@
 export default {
     name: 'blog',
     layout: 'blog',
-    components: {},
     data() {
         return {
             blogCards: [

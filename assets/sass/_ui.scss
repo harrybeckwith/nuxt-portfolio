@@ -33,6 +33,7 @@ p {
 
 .title--page {
   padding-bottom: 15px;
+  padding-top: 15px;
 }
 
 .italic {
@@ -47,4 +48,26 @@ p {
 .list--bullet li {
   list-style: disc;
   padding-bottom: 10px;
+}
+
+pre {
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+}
+
+img {
+  max-width: 100%;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.link {
+  color: #8234fc;
+  text-decoration: underline;
+}
+
+pre {
+  overflow: scroll;
 }
