@@ -1,3 +1,9 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/nuxt-portfolio/'
+  }
+} : {}
+
 export default {
   mode: 'universal',
   /*
@@ -47,6 +53,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [],
+  ...routerBase,
   /*
    ** Build configuration
    */
@@ -56,9 +63,5 @@ export default {
      */
     extend(config, ctx) {},
   },
-  router: {
-    mode: 'spa',
-    base: '/nuxt-portfolio/'
-  }
-
+  
 };
