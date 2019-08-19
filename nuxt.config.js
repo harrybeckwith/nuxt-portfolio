@@ -57,6 +57,7 @@ export default {
     extend(config, ctx) {},
   },
   router: {
+    mode: 'spa',
     base: '/nuxt-portfolio/'
   }
 
