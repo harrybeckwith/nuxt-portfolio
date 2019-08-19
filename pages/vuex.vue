@@ -9,7 +9,7 @@
         <p>
             Vuex is a state management pattern + library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion.
         </p>
-        <img src="/images/vuex/vuex.png" alt="vuex chart" class="image">
+        <img src="images/vuex/vuex.png" alt="vuex chart" class="image">
         <h3 class="italic title--page">
                 Why use Vuex?
         </h3>
@@ -67,7 +67,7 @@ new Vue({
 <h3 class="italic title title--page">
     How to work with the store (vuex)
 </h3>
-<img src="/images/vuex/store.png" alt="vuex chart" class="image">
+<img src="images/vuex/store.png" alt="vuex chart" class="image">
 <h3 class="italic title title--page">
    Mutations
 </h3>
