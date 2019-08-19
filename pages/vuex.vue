@@ -9,7 +9,7 @@
         <p>
             Vuex is a state management pattern + library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion.
         </p>
-        <img src="~assets/images/vuex/vuex.png" alt="vuex chart" class="image">
+        <img src="/images/vuex/vuex.png" alt="vuex chart" class="image">
         <h3 class="italic title--page">
                 Why use Vuex?
         </h3>
@@ -67,7 +67,7 @@ new Vue({
 <h3 class="italic title title--page">
     How to work with the store (vuex)
 </h3>
-<img src="~assets/images/vuex/store.png" alt="vuex chart" class="image">
+<img src="/images/vuex/store.png" alt="vuex chart" class="image">
 <h3 class="italic title title--page">
    Mutations
 </h3>
@@ -217,11 +217,11 @@ export const store = new Vuex.Store({
     Referencing the store and dispatch with the name that matches actions function name, this will now send the this. event data into the action, then call the mutation and update the state.
   </p>
   <p>
-    Using the pattern above is a way to set up and use Vuex as the data point in your application was helps avoid tracking through components to see where the data needs to pass to. This can become bloated in larger applications so a module approach is needed to aid larger apps. Documentation can be found <a href="https://vuex.vuejs.org/guide/modules.html" target="_blank" class="link">here</a>.
+    Using the pattern above is a way to set up and use Vuex as the data point in your application was helps avoid tracking through components to see where the data needs to pass to. This can become bloated in larger applications so a module approach is needed to aid larger apps. Documentation can be found <a href="https://vuex.vuejs.org/guide/modules.html" target="_blank" class="link">here</a>.  </p>
     <p>
       That’s the basics of Vuex, cheers ☕️
     </p>
-  </p>
+
     </div>
 </template>
 <script>
