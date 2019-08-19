@@ -1,0 +1,188 @@
+<!doctype html>
+<html data-n-head-ssr data-n-head="">
+  <head data-n-head="">
+    <title data-n-head="true">blog</title><meta data-n-head="true" charset="utf-8"><meta data-n-head="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="true" data-hid="description" name="description" content="My lovely Nuxt.js project"><link data-n-head="true" rel="icon" type="image/x-icon" href="/favicon.ico"><link data-n-head="true" rel="stylesheet" href="/css/prism.css"><script data-n-head="true" src="/js/prism.js"></script><base href="/nuxt-portfolio/"><link rel="preload" href="/nuxt-portfolio/_nuxt/fa3517d148d991c688bd.js" as="script"><link rel="preload" href="/nuxt-portfolio/_nuxt/e537d4267bdb4ff1cac8.js" as="script"><link rel="preload" href="/nuxt-portfolio/_nuxt/22fd2d710446b2a95600.js" as="script"><link rel="preload" href="/nuxt-portfolio/_nuxt/886760d69b628acea377.js" as="script"><style data-vue-ssr-id="17cfdfa9:0 2380ce40:0 2380ce40:1 1b3732da:0">.nuxt-progress{position:fixed;top:0;left:0;right:0;height:2px;width:0;opacity:1;transition:width .1s,opacity .4s;background-color:#fff;z-index:999999}.nuxt-progress.nuxt-progress-notransition{transition:none}.nuxt-progress-failed{background-color:red}.container{max-width:1020px}.container,.container--sm{margin-left:auto;margin-right:auto;padding-left:10px;padding-right:10px}.container--sm{max-width:840px}.top-gap{margin-top:50px}p{margin-top:10px}.image{padding-top:30px;padding-bottom:30px}.title{text-transform:capitalize}.title--page{padding-bottom:15px;padding-top:15px}.italic{font-style:italic}.list{padding-top:10px;padding-bottom:10px}.list--bullet li{list-style:disc;padding-bottom:10px}pre{margin-top:40px!important;margin-bottom:40px!important}img{max-width:100%}.bold{font-weight:700}.link{color:#8234fc;text-decoration:underline}pre{overflow:scroll}html{font-size:16px;word-spacing:1px;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;box-sizing:border-box}*,:after,:before{box-sizing:border-box;margin:0}li{list-style:none}body{font-family:Merriweather,serif;font-weight:400;color:rgba(0,0,0,.84);line-height:1.6}a{color:inherit;text-decoration:inherit}.logo[data-v-7216973a]{transition:.3s linear}.logo[data-v-7216973a]:hover{color:#8234fc}.header[data-v-7216973a]{background-color:#fff;padding:15px;border-bottom:1px solid #efefef}.header__inside[data-v-7216973a]{display:flex;justify-content:space-between;align-items:center}.nav__list[data-v-7216973a]{display:flex}.nav__list__item[data-v-7216973a]{margin-left:10px;font-weight:700;transition:.3s linear}.nav__list__item[data-v-7216973a]:hover{color:#8234fc}.nav__list__item--first[data-v-7216973a]{border-right:1px solid #000;padding-right:10px}</style>
+  </head>
+  <body data-n-head="">
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div><header class="header" data-v-7216973a><div class="container" data-v-7216973a><div class="header__inside" data-v-7216973a><a href="/nuxt-portfolio/" class="nuxt-link-active" data-v-7216973a><h1 class="logo" data-v-7216973a>
+                ;
+            </h1></a> <nav class="nav" data-v-7216973a><ul class="nav__list" data-v-7216973a><li class="nav__list__item nav__list__item--first" data-v-7216973a><a href="/nuxt-portfolio/" class="nuxt-link-active" data-v-7216973a>Home</a></li> <li class="nav__list__item" data-v-7216973a><a href="/nuxt-portfolio/blog" data-v-7216973a>Blog</a></li></ul></nav></div></div></header> <div class="container--sm top-gap"><div><h1 class="title italic">
+            Vuex — how to use state
+        </h1> <p>
+            When an app becomes complex in terms of where data is being passed between multiple components, it is time to make use of Vuex.
+        </p> <p>
+            Vuex is a state management pattern + library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion.
+        </p> <img src="/nuxt-portfolio/_nuxt/img/de7fa10.png" alt="vuex chart" class="image"> <h3 class="italic title--page">
+                Why use Vuex?
+        </h3> <ul class="list list--bullet"><li>
+                Vuex provides one source of truth
+            </li> <li>
+                Every component has access to the global state
+            </li> <li>
+                The global state is reactive, just like local state
+            </li> <li>
+                Reduces component data tracking from becoming complex.
+            </li> <li>
+                Vuex provides a state pattern to make updates standardized.
+            </li></ul> <p>
+            To set up Vuex you have to install the npm package.
+        </p> <pre><code class="language-bash"> npm i vuex --save</code></pre> <p>
+           Inside the src folder, we can now set up a store.js file. 
+        </p> <p>
+            Heres how the store.js file would look.
+        </p> <pre><code class="language-javascript">
+import Vue from 'vue';
+import Vuex from 'vuex';
+
+Vue.use(Vuex);
+
+export const store = new Vuex.Store({
+  state: {},
+  mutations: {},
+  actions: {},
+  getters: {},
+});</code></pre> <p>Inside main.js we can link the store to the Vue instance by importing the store file and added to Vue…</p> <pre><code class="language-javascript">import Vue from 'vue';
+import App from './App.vue';
+import { store } from './store/store';
+
+Vue.config.productionTip = false;
+
+new Vue({
+  store,
+  render: h => h(App),
+}).$mount('#app');</code></pre> <p>Right now we have the store set up 🥳 but we cannot access or edit yet 😕.</p> <h3 class="italic title title--page">
+    How to work with the store (vuex)
+</h3> <img src="/nuxt-portfolio/_nuxt/img/b5ba67c.png" alt="vuex chart" class="image"> <h3 class="italic title title--page">
+   Mutations
+</h3> <ul class="list list--bullet"><li>Commit + track state changes</li> <li>The best practice is for actions to call mutations then mutations update the state directly.</li> <li>Using the dev tools we can roll back mutations back to the previous state value.</li></ul> <h3 class="italic title title--page">
+              Getting the state from Vuex into computed properties.
+          </h3> <p>
+              Inside the <span class="bold">store.js</span> we can create getters, these interact directly with the state in the store. They are used to get the state. We can then display the getters inside components through computed properties.
+          </p> <p><a href="https://vuex.vuejs.org/guide/getters.html" target="_blank" class="link">Documentation for getters here.</a></p> <p><span class="bold">Store.js</span> file with state and getters set up.</p> <pre><code class="language-javascript">import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state: {
+    user: { id: 'aaa', name: 'Adsasas' },
+    events: [
+      {
+        id: 1,
+        title: 'title one',
+        organizer: 'a'
+      },
+      {
+        id: 2,
+        title: 'title two',
+        organizer: 'b'
+      },
+      {
+        id: 3,
+        title: 'title three',
+        organizer: 'c'
+      }
+    ],
+    categories: [
+      'sustainability',
+      'nature',
+      'animal welfare',
+      'housing',
+      'education',
+      'food',
+      'community'
+    ]
+  },
+  mutations: {},
+  actions: {},
+  getters: {
+    catLength: state => {
+      return state.categories.length
+    },
+    doneToDos: state => {
+      return state.todos.filter(todo => todo.done)
+    },
+    activeTodosCount: state => {
+      return state.todos.filter(todo => !todo.done).length
+    },
+    getEventById: state => id => {
+      return state.events.find(event => event.id === id)
+    }
+  }
+})</code></pre> <h3 class="title title--page italic">
+    How to link the getters to components?
+</h3> <p>
+    Use computed properties, but first, we can map the getters for easy access like so.
+</p> <p><span class="bold">component.vue</span></p> <pre><code class="language-javascript">&lt;template>
+    &lt;div>
+    &lt;h1>Create Event {{ userName }}&lt;/h1>
+    &lt;p>There are {{catLength}} categories&lt;/p>
+      &lt;ul>
+        &lt;li v-for="cat in categories" :key="cat">
+            {{cat}}
+        &lt;/li>
+      &lt;/ul>
+      &lt;p>
+      {{ getEventById(3) }}
+    &lt;/div>
+&lt;/template></code></pre> <p><span class="bold">component.vue - script section</span></p> <pre><code class="language-javascript">import { mapState, mapGetters } from 'vuex'
+export default {
+  computed: {
+    ...mapState(['user', 'categories']),
+    ...mapGetters(['getEventById', 'catLength'])
+  }
+}</code></pre> <p>You have to import { mapGetters } from Vuex to be able to place inside the computed properties. Using the spread operator and pacing each getter as a string array item we can then reference individual getters inside the template.</p> <p>We can also create getters that take arguments which are then used as a computed property and take input inside the template. The example for this is the getter getEventById in the above two code blocks.</p> <h3 class="title title--page italic">
+  Mutations
+</h3> <ul class="list list--bullet"><li>
+Can update/mutate Vuex State.
+  </li> <li>
+They are synchronous, they happen one after another.
+  </li></ul> <p><a href="https://vuex.vuejs.org/guide/mutations.html" target="_blank" class="link">Mutations documentation here.</a></p> <h3 class="title title--page italic">
+  Actions
+</h3> <ul class="list list--bullet"><li>
+Can wrap business logic around mutations
+  </li> <li>
+Always put <span class="bold">Mutations</span> within <span class="bold">Actions</span> — as business logic, later on, would be easy to apply, this increases the scalability.
+  </li></ul> <p><a href="https://vuex.vuejs.org/guide/actions.html" target="_blank" class="link">Actions documentation here.</a></p> <pre><code class="language-javascript">import Vue from 'vue';
+import Vuex from 'vuex';
+
+Vue.use(Vuex);
+export const store = new Vuex.Store({
+  state: {
+    categories: ['travel', 'fun', 'social', 'work', 'other'],
+    events: [],
+  },
+  getters: {
+    cat: state => {
+      return state.categories;
+    },
+    getEventById: state => id => {
+      return state.events.find(event => event.id === id);
+    },
+    events: state => {
+      return state.events;
+    },
+  },
+  mutations: {
+    ADD_EVENT(state, event) {
+      state.events.push(event);
+    },
+  },
+  actions: {
+    createEvent({ commit }, event) {
+      commit('ADD_EVENT', event);
+    },
+  },
+});</code></pre> <p>
+  Here we can see that mutation has been created that takes an event and pushes to the events array. The action is the code that we will dispatch to from the component, in turn, this calls the mutation and updates the store state.
+</p> <p>
+  Let's see how to call the action inside a component.
+</p> <pre><code class="language-bash">this.$store.dispatch('createEvent', this.event)</code></pre> <p>
+    Referencing the store and dispatch with the name that matches actions function name, this will now send the this. event data into the action, then call the mutation and update the state.
+  </p> <p>
+    Using the pattern above is a way to set up and use Vuex as the data point in your application was helps avoid tracking through components to see where the data needs to pass to. This can become bloated in larger applications so a module approach is needed to aid larger apps. Documentation can be found <a href="https://vuex.vuejs.org/guide/modules.html" target="_blank" class="link">here</a>.
+    </p><p>
+      That’s the basics of Vuex, cheers ☕️
+    </p> <p></p></div></div></div></div></div><script>window.__NUXT__={layout:"blog",data:[{}],error:null,serverRendered:!0}</script><script src="/nuxt-portfolio/_nuxt/fa3517d148d991c688bd.js" defer></script><script src="/nuxt-portfolio/_nuxt/886760d69b628acea377.js" defer></script><script src="/nuxt-portfolio/_nuxt/e537d4267bdb4ff1cac8.js" defer></script><script src="/nuxt-portfolio/_nuxt/22fd2d710446b2a95600.js" defer></script>
+  </body>
+</html>
